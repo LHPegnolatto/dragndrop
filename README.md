@@ -6,7 +6,7 @@
 
 ### :triangular_ruler: Projeto
 
-Escopo de funcionalidades para ser usadas em projetos futuros.
+Escopo de funcionalidades para serem usadas em projetos futuros.
 
 ### :memo: Licença
 
