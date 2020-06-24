@@ -1,32 +1,22 @@
 import React, { useState } from 'react';
 import { FiPlusCircle } from 'react-icons/fi';
 
-import { Container, Module, AddModuleButton } from './styles';
+import { Container, AddModuleButton } from './styles';
 
-interface ModuleProps {
-  type: String,
-  content: String,
-  color: String,
-}
+import EditInPlaceComponent from '../EditInPlace';
 
 const Workspace: React.FC = () => {
-  const [modules, setModules] = useState<ModuleProps[]>([]);
+  const [modules, setModules] = useState<string[]>([]);
 
   const addNewModule = () => {
-    setModules([...modules, {
-      type: 'simple-text',
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempore officia rerum amet modi dolor! Quas, veniam inventore repellat repellendus a mollitia maiores eveniet fuga voluptates atque error eos repudiandae.',
-      color: '#7371FC',
-    }])
+    setModules([...modules, 'aa'])
   };
 
   return (
     <Container>
       {modules.map((module, index) => {
         return (
-          <Module key={index}>
-            {module.content}
-          </Module>
+          <EditInPlaceComponent key={index} content={module} />
         );
       })}
       <AddModuleButton onClick={addNewModule}>

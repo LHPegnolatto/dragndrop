@@ -1,5 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+
 import usePersistedState from './utils/usePersistedState';
 
 import light from './styles/themes/light';
@@ -10,21 +13,23 @@ import Header from './components/Header';
 import Home from './pages/Home';
 
 function App() {
-  const [theme, setTheme] = usePersistedState<string>('theme', 'string');
+  const [theme, setTheme] = usePersistedState<string>('theme', 'light');
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   }
 
   return (
-    <ThemeProvider theme={theme === 'light' ? light : dark}>
-      <div className="App">
-        <Header toggleTheme={toggleTheme} />
-        <Home />
+    <DndProvider backend={HTML5Backend}>
+      <ThemeProvider theme={theme === 'light' ? light : dark}>
+        <div className="App">
+          <Header toggleTheme={toggleTheme} />
+          <Home />
 
-        <GlobalStyle />
-      </div>
-    </ThemeProvider>
+          <GlobalStyle />
+        </div>
+      </ThemeProvider>
+    </DndProvider>
   );
 }
 

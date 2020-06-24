@@ -13,9 +13,9 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
 
   return (
     <Container>
-      <span>DRAG AND DROP TEST</span>
+      <span>DRAG N' DROP TEST</span>
       <ThemeButton onClick={toggleTheme}>
-        { title === 'light' ? (<FiMoon color='#F5EFFF' size='20rem' />) : (<FiSun color='#F5EFFF' size='20rem' />) }
+        { title === 'light' ? <FiMoon color='#F5EFFF' size='20rem' /> : <FiSun color='#F5EFFF' size='20rem' /> }
       </ThemeButton>
     </Container>
   )

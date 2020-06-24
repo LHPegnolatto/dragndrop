@@ -12,16 +12,9 @@ export const Container = styled.div`
   box-shadow: 0px 0px 10px #33333354;
 `;
 
-export const Module = styled.div`
-  margin: 10px;
-  padding: 10px;
-
-  border: ${props => props.theme.colors.primary} solid 2px;
-  border-radius: 5px;
-`;
-
 export const AddModuleButton = styled.span`
   cursor: pointer;
 
   align-self: center;
+  margin: 10px;
 `;
